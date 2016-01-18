@@ -3,13 +3,12 @@ package org.ansj.test;
 import java.util.ArrayList;
 import java.util.List;
 
+import junit.framework.TestCase;
 import org.ansj.splitWord.analysis.NlpAnalysis;
-import org.junit.Test;
 
-public class NlpAnalysiTest {
+public class NlpAnalysiTest extends TestCase {
 
-	@Test
-	public void nameTest() {
+	public void testName() {
 		List<String> list = new ArrayList<String>();
 		list.add("李宇春《再不疯狂我们就老了》MV首播】李宇春新专辑同名第二主打《再不疯狂我们就老了》MV今日正式发布。这首歌与《似火年华》，以“疯狂”为概念的对话曲目，采用一曲双词的方式。李宇春与韩寒，同时在一首歌里，讲述了两种截然相反，却本质同归的态度");
 		list.add("上个月在天津术语学会上见到冯老，言谈中感觉到冯老对机器翻译的深厚感情和殷切希望。是啊，机器翻译事业还年轻，我辈细流，心驰沧海，愿倾尽绵薄之力，浇灌此常青之树。");
@@ -38,12 +37,10 @@ public class NlpAnalysiTest {
 		}
 	}
 
-	@Test
 	public void companyTest() {
 
 	}
 
-	@Test
 	public void foreignTest() {
 
 	}

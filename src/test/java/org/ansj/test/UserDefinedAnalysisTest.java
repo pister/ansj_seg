@@ -5,14 +5,13 @@ import java.util.List;
 
 import junit.framework.Assert;
 
+import junit.framework.TestCase;
 import org.ansj.domain.Term;
 import org.ansj.library.UserDefineLibrary;
 import org.ansj.splitWord.analysis.ToAnalysis;
-import org.junit.Test;
 
-public class UserDefinedAnalysisTest {
+public class UserDefinedAnalysisTest extends TestCase {
 
-	@Test
 	public void test() {
 		String newWord = "爸爸去哪儿";
 		String nature = "aaaaa";

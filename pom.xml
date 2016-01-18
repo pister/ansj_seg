@@ -16,31 +16,10 @@
 		</license>
 	</licenses>
 
-	<scm>
-		<connection>scm:git:git@github.com:ansjsun/ansj_seg.git</connection>
-		<developerConnection>scm:git:git@github.com:ansjsun/ansj_seg.git</developerConnection>
-		<url>git@github.com:ansjsun/ansj_seg.git</url>
-	</scm>
-
-
-	<developers>
-		<developer>
-			<id>ansj</id>
-			<name>ansj</name>
-			<email>ansj-sun@163.com</email>
-		</developer>
-	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-	<distributionManagement>
-		<repository>
-			<id>mvn-repo</id>
-			<url>scpexe://ansj/home/mvn-repo/ROOT</url>
-		</repository>
-	</distributionManagement>
 
 	<repositories>
 		<repository>
@@ -52,16 +31,23 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.nlpcn</groupId>
-			<artifactId>nlp-lang</artifactId>
-			<version>1.1</version>
-			<scope>compile</scope>
+            <groupId>org.nlpcn</groupId>
+            <artifactId>nlp-lang</artifactId>
+            <scope>compile</scope>
+            <version>1.1</version>
 		</dependency>
+
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>4.9.1</version>
+            <scope>provided</scope>
+        </dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
+			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -78,50 +64,24 @@
 				</configuration>
 			</plugin>
 
-
-			<plugin>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.4.1</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<minimizeJar>false</minimizeJar>
-							<shadedArtifactAttached>true</shadedArtifactAttached>
-							<shadedClassifierName>all-in-one</shadedClassifierName>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<attach>true</attach>
-				</configuration>
-			</plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
 		</plugins>
 
 
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ssh-external</artifactId>
-				<version>1.0-beta-6</version>
-			</extension>
-		</extensions>
 	</build>
 </project>

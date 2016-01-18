@@ -1,24 +1,14 @@
 package org.ansj.test;
 
+import junit.framework.TestCase;
+import org.ansj.splitWord.analysis.NlpAnalysis;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.ansj.dic.LearnTool;
-import org.ansj.domain.Term;
-import org.ansj.library.UserDefineLibrary;
-import org.ansj.recognition.NatureRecognition;
-import org.ansj.splitWord.analysis.IndexAnalysis;
-import org.ansj.splitWord.analysis.NlpAnalysis;
-import org.ansj.splitWord.analysis.ToAnalysis;
-import org.ansj.util.MyStaticValue;
-import org.junit.Test;
-import org.nlpcn.commons.lang.tire.domain.Value;
-import org.nlpcn.commons.lang.tire.library.Library;
+public class TestError extends TestCase {
 
-public class TestError {
-
-	@Test
-	public void test() {
+    public void test() {
 
 //		LearnTool tool = new LearnTool();
 //		System.out.println(NlpAnalysis.parse("这次回家，我经济南下广州", tool));
@@ -95,10 +85,10 @@ public class TestError {
 //		
 //		System.out.println(ToAnalysis.parse(";"));
 //		
-		List<String> all = new ArrayList<String>() ;
+        List<String> all = new ArrayList<String>();
 //		
 //		all.add("某地区大地震后救灾工作程序示意图") ;
-		all.add("大地震后") ;
+        all.add("大地震后");
 //		all.add("10,上城区小营街道大学路,余林,330102196204011513 ,2,13456808992,大学路新村44-122-102,大学路新村44-122-102,Z2015120110302017,Z,2015    -12-25") ;
 //		all.add("某品牌企业在京津冀地区建有饮用瓶装水厂") ;
 //		all.add("黄山16点前日出东北方") ;
@@ -109,12 +99,12 @@ public class TestError {
 //		all.add("孙红雷暴打记者中国娱乐界如此蛮横"); 
 //	    System.out.println(ToAnalysis.parse("你吃过了吗？？没吃"));
 //	    System.out.println(NlpAnalysis.parse("你吃过了吗？？没吃"));
-		
-		
-		for (String string : all) {
+
+
+        for (String string : all) {
 //			System.out.println(ToAnalysis.parse(string));
-			System.out.println(NlpAnalysis.parse(string));
-		}
-		
-	}
+            System.out.println(NlpAnalysis.parse(string));
+        }
+
+    }
 }

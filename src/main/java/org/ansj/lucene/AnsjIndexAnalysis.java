@@ -1,15 +1,14 @@
-package org.ansj.lucene4;
+package org.ansj.lucene.v4;
 
-import java.io.BufferedReader;
-import java.io.Reader;
-import java.util.Set;
-
-import org.ansj.lucene.util.AnsjTokenizer;
-import org.ansj.splitWord.analysis.ToAnalysis;
+import org.ansj.lucene.v4.util.AnsjTokenizer;
+import org.ansj.splitWord.analysis.IndexAnalysis;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.Tokenizer;
 
-public class AnsjAnalysis extends Analyzer {
+import java.io.Reader;
+import java.util.Set;
+
+public class AnsjIndexAnalysis extends Analyzer {
 
 	boolean pstemming;
 	public Set<String> filter;
@@ -20,26 +19,26 @@ public class AnsjAnalysis extends Analyzer {
 	 * @param pstemming
 	 *            是否分析词干
 	 */
-	public AnsjAnalysis(Set<String> filter, boolean pstemming) {
+	public AnsjIndexAnalysis(Set<String> filter, boolean pstemming) {
 		this.filter = filter;
-		this.pstemming = pstemming;
 	}
 
 	/**
 	 * @param pstemming
 	 *            是否分析词干.进行单复数,时态的转换
 	 */
-	public AnsjAnalysis(boolean pstemming) {
+	public AnsjIndexAnalysis(boolean pstemming) {
 		this.pstemming = pstemming;
 	}
 
-	public AnsjAnalysis() {
+	public AnsjIndexAnalysis() {
 		super();
 	}
 
 	@Override
 	protected TokenStreamComponents createComponents(String fieldName, final Reader reader) {
-		Tokenizer tokenizer = new AnsjTokenizer(new ToAnalysis(reader), reader, filter, pstemming);
+		// TODO Auto-generated method stub
+		Tokenizer tokenizer = new AnsjTokenizer(new IndexAnalysis(reader), reader, filter, pstemming);
 		return new TokenStreamComponents(tokenizer);
 	}
 
