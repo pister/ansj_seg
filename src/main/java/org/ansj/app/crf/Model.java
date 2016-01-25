@@ -74,8 +74,6 @@ public abstract class Model {
 	 */
 	public void writeModel(String path) throws FileNotFoundException, IOException {
 		// TODO Auto-generated method stub
-
-		System.out.println("compute ok now to save model!");
 		// 写模型
 		ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new GZIPOutputStream(new FileOutputStream(path))));
 

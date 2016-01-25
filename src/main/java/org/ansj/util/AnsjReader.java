@@ -85,7 +85,6 @@ public class AnsjReader extends Reader {
 
 			readString();
 			// if (tempLen != 0)
-			// System.out.println(new String(cb, tempOffe, tempLen));
 
 			if (!isRead && (tempLen == 0 || len == 0)) {
 				if (sb != null) {

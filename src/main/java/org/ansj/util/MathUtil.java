@@ -52,7 +52,6 @@ public class MathUtil {
 			value += frequency;
 		}
 
-System.out.println(from.getName() + "\t" + to.getName() + "\t" + (value)+"\t"+nTwoWordsFreq);
 		return from.score() + value;
 	}
 

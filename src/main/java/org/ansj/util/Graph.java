@@ -346,20 +346,4 @@ public class Graph {
 
 	}
 
-	/**
-	 * 对graph进行调试用的
-	 */
-	public void printGraph() {
-		for (Term term : terms) {
-			if (term == null) {
-				continue;
-			}
-			System.out.print(term.getName() + "\t" + term.score() + " ,");
-			while ((term = term.next()) != null) {
-				System.out.print(term + "\t" + term.score() + " ,");
-			}
-			System.out.println();
-		}
-	}
-
 }

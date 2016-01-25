@@ -108,8 +108,6 @@ public class DownLibrary {
 				continue;
 			}
 
-			System.out.println("to wirte file " + entryFile.getAbsolutePath());
-
 			// 写入文件
 			bos = new BufferedOutputStream(new FileOutputStream(entryFile));
 			bis = new BufferedInputStream(zip.getInputStream(entry));

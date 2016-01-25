@@ -73,7 +73,7 @@ public class AnsjServer {
 					writeToClient(httpExchange, e.getMessage());
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
-					System.out.println("eee");
+					throw new RuntimeException(e);
 				}
 
 			} finally {
